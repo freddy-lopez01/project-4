@@ -120,9 +120,9 @@
             // you need to pass much more!
             // View flask_brevets.py for details.
             function calc_times(control) {
-              var m = control.find("input[name='km']").val();
-              var brevet_dist_km = document.getElementById("brevet_dist_km").value;
-              var brevet_start_time = document.getElementById("begin_date").value;
+              var km = control.find("input[name='km']").val();
+              var brevet_dist_km = $("#brevet_dist_km").val();
+              var brevet_start_time = $("#begin_date").val();
               //var brevet_start_time = $("#begin_date").val();
 
               var open_time_field = control.find("input[name='open']");
@@ -130,7 +130,7 @@
 
               console.log("brevet_start_time = " + brevet_start_time);
 
-              $.getJSON(TIME_CALC_URL, {km: m, brevet_start_time: brevet_start_time, brevet_dist_km: brevet_dist_km}).done(
+              $.getJSON(TIME_CALC_URL, {km: km, brevet_start_time: brevet_start_time, brevet_dist_km: brevet_dist_km}).done(
                 function(data) {
                    var times = data.result;
                    console.log("Got a response: ");

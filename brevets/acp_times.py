@@ -146,8 +146,8 @@ def close_time(control_dist_km, brevet_dist_km, brevet_start_time):
        total += time
        if (control_dist_km == brevet_dist_km) and brevet_dist_km <=200:
           hours = int(total)
-          minutes = round((total - hours) * 60)
-          return brevet_start_time.shift(hours=hours, minutes=minutes + 10)
+          minutes = round((total - hours) * 60) + 10
+          return brevet_start_time.shift(hours=hours, minutes=minutes)
           
     elif control_dist_km <= 1000:
        first_km = 600 / 15
